@@ -15,7 +15,7 @@ def student_api(request, pk=None):
     if request.method == 'GET':
         id = pk
         if id is not None:
-           stu = Student.objects.get(pk=id)
+           stu = Student.objects.get(id=id)
            serializer = StudentSerializer(stu)
            return Response(serializer.data, status = status.HTTP_201_CREATED)
         stu = Student.objects.all()
